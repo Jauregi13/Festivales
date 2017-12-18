@@ -69,6 +69,8 @@ public class Main {
 		f1.addActuacion(a4);
 		f1.addActuacion("Linkin Park", 95);
 		
+		f1.addActuacion("El reno renardo", 100);
+		
 		f1.mostrarInfo();
 
 	}
