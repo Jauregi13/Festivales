@@ -46,12 +46,47 @@ public class Festival {
 	public void mostrarInfo(){
 		System.out.println(getNombre());
 		System.out.println("Patrocinado por " + getPatrocinador());
+		System.out.println(this.duracionTotalFestival() + " minutos de musica!!");
 		System.out.println("----------------");
 		Iterator<Actuacion> i = actuaciones.iterator();
 		
 		while (i.hasNext()){ 
 			System.out.println(i.next().getInfo());
 		}
+	}
+	
+	
+	public void eliminarActuacion(String grupo){
+		Iterator<Actuacion> i = actuaciones.iterator();
+		
+		while(i.hasNext()){
+			Actuacion a = i.next();
+			if (a.getNombreGrupo().equals(grupo)){
+				i.remove();
+			}
+		}
+	}
+	
+	
+	
+	
+	public void cambiarDuracionActuacion(String nombre_grupo, int duracion){
+		for(int i = 0; i < this.actuaciones.size(); i++){
+			if(this.actuaciones.get(i).getNombreGrupo().equals(nombre_grupo)){
+				Actuacion a = this.actuaciones.get(i);
+				a.setDuracion(duracion);
+				this.actuaciones.set(i, a);
+			}
+		}
+	}
+	
+	
+	public int duracionTotalFestival(){
+		int duracion_total = 0;
+		for (int i = 0; i < actuaciones.size(); i++){
+			duracion_total = duracion_total + actuaciones.get(i).getDuracion();
+		}
+		return duracion_total;
 	}
 	
 	

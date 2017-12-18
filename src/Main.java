@@ -72,6 +72,13 @@ public class Main {
 		f1.addActuacion("El reno renardo", 100);
 		
 		f1.mostrarInfo();
+		
+		
+		System.out.println("Introduce un grupo para eliminar del festival:");
+		String grupo = lector.nextLine();
+		f1.eliminarActuacion(grupo);
+		
+		f1.mostrarInfo();
 
 	}
 

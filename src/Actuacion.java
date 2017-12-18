@@ -7,8 +7,7 @@ public class Actuacion {
 	
 	
 	
-	
-	
+
 	
 	
 	public String getNombreGrupo() {
